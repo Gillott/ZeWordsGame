@@ -57,9 +57,11 @@ unit14 = [
     ['carpenter','chemist','receptionist','shop assistant','typist','insurance','bonus','fee','income','reward','wage','charge','summaray','guidance','paragraph','timetable','institute','aid','pump','data','deer','charge','take charge of','topic','receipt','error','liquid','comprehension','consult','chart','casual','quarrel','go into details','speak up','sit up','nursery','collar','appointment','childhood','typewriter','instant','battle','civil','moral','basis','corn','cattle','frost','surrounding','steep','grain','lip','mud','wisdom','idiom','junior','junior high','universe','believe in','mankind','nest','feather','turn over','overcome','grasp','inspect','illegal','pay off','commit','committed','existence','glory','constantly','beneath','bend','stage','hesitate','wrist','twist','judgemnet','keep up with','decrease','multiply','division','branch','operate','dynamic','respond','flexible','envy','bother','continent','in case','comfort','slave','boom','panic','arithmetic','enclose','curriculum vitae','due to','in addition','qualification']
 ]
 unit15 = [
-    ['箭','氧气','打勾','公牛','拼写','由后向前地','改正','简化','罐子'],
-    ['arrow','oxygen','tick','ox','spelling','backwards','correction','simplify','jar']
+    ['箭','氧气','打勾','公牛','拼写','由后向前地','改正','简化','罐子','稳定的','坦率地','解雇','空白的','被充满','怀疑','块','喉咙','现状','最高级别的','谚语','邮费','航空邮政','使用者','指导','除···之外','埋葬','字母表','辨别','练习','格言','保守的','任务','非传统的','惩罚','名誉','少量的','不严谨的','品行不端','遵守','温和的','接收者','速度','杰出的','反映','挑选','在某种程度上','误解','角','三角形','原子','倒','火药','火焰','使爆炸','缺乏','吐口水','拉','酸','洋葱','我们的','权利','值得努力的','间谍','胶水','同伴','同学','获得','习惯于','思考','职衔','官僚的','值得的','宗教','保卫','倾向于','忽视','不情愿的','假设','赞成','强烈要求','启发','影子','传统的','王国','文明','极其重要的','有益的','景象','假设','使适应','总的来说','设备','欣赏','生物化学','合唱团'],
+    ['arrow','oxygen','tick','ox','spelling','backwards','correction','simplify','jar','secure','frankly','lay off','blank','swell','suspect','lump','throat','status','chief','saying','postage','airmail','user','instruct','aside from','bury','alphabet','distinguish','drill','motto','conservative','assignment','alternative','punishment','reputation','slight','loose','loose conduct','obey','mild','receiver','pace','outstanding','reflect','select','to a certain extent','misunderstand','angle','triangle','atom','pour','powder','flame','set off','lack','spit','drag','acid','onion','ours','access','worthwhile','spy','glue','fellow','fellow students','acquire','be accustomed to','thinking','rank','bureaucratic','worthy','religion','defence','tend to','ignore','unwilling','assumption','approve','urge','inspire','shadow','conventional','kingdom','civilisation','vital','beneficial','image','assume','adapt','as a whole','facility','appreciation','biochemistry','choir']
 ]
+print(len(unit15[0]))
+print(len(unit15[1]))
 unit16 = [
     [],
     []
@@ -100,13 +102,15 @@ unit24 = [
 all_wards = [unit1,unit2,unit3,unit4,unit5,unit6,unit7,unit8,unit9,unit10,unit11,unit12,unit13,unit14,unit15,unit16,unit17,unit18,unit19,unit20,unit21,unit22,unit23,unit24]
 
 print('此程序运用进行 BS 版高中英语单词练习，相关功能如下：∠ (ᐛ 」∠ )')
-print('----------------')
+print('----------------------')
 print('·输入 1 进行英语拼写练习')
+print()
 print('·输入 2 进行单词翻译练习')
+print()
 print('·单走一个 6 即可查看单词表')
-print('----------------')
+print('----------------------')
 print('PS:任意过程输入 q 可立即结束此程序')
-print('----------------')
+print('----------------------')
 choice = input('_(:з」∠ )_ 请选择：')
 
 if choice == '1' :
@@ -115,26 +119,31 @@ if choice == '1' :
     que = all_wards[unit][0]
     ans = all_wards[unit][1]
     passed_words = []
-    judge = True
+    judge = 0
+    times = -1
     while True:
         length = int(len(que))
+        index_list = [i for i in range(len(que))]
+        times += 1
         if length > 0 :
-            index_list = [i for i in range(length)]
-            if judge == True:
+            if times > 0:
+                if judge % 2 == 0:
+                    random.shuffle(index_list)
+                    index = index_list[0]
+            else:
                 random.shuffle(index_list)
                 index = index_list[0]
-            else:
-                index = index_list[0]
-            print('----------------')
+            judge = 2
+            print('----------------------')
             print('当前词库单词剩余数：' + str(len(que)))
-            print('----------------')
+            print('----------------------')
             print('Please spell:' + que[index])
             answer = input('请拼写：')
             if answer == ans[index]:
                 print('Great!' + '∠ (ᐛ 」∠ )')
                 que.pop(index)
                 ans.pop(index)
-                judge = True
+                judge += 2
                 continue
             elif answer == 'pass':
                 print('·answer : '+ ans[index]+ ' ∠ (ᐛ 」∠ )')
@@ -147,30 +156,31 @@ if choice == '1' :
                 if int(len(passed_words)) == 0:
                     break
                 else:
-                    print('此次 pass 单词如下：')
-                    print('----------------')
+                    print('(¦3[▓▓]')
+                    print('已自动结束运行，此次 pass 单词如下：')
                     for word in passed_words:
                         print(word)
-                    print('----------------')
+                    print('----------------------')
                     print('共计 ' + str(len(passed_words)) + ' 个单词')
                     break
             else:
+                judge += 1
                 print('Error!')
-                print('·现在你可以继续回答，也可以输入 pass 查看答案并回答下一个')
-                judge = False
+                print('现在你可以继续回答，也可以输入 pass 查看答案后回答下一个')
                 continue
         else:
-            print('----------------')
+            print('----------------------')
             print('当前词库单词剩余数：' + str(len(que)))
-            print('----------------')
+            print('----------------------')
             if int(len(passed_words)) == 0:
+                print('已自动结束运行')
                 break
             else:
-                print('此次 pass 单词如下：')
-                print('----------------')
+                print('(¦3[▓▓]')
+                print('已自动结束运行，此次 pass 单词如下：')
                 for word in passed_words:
                     print(word)
-                print('----------------')
+                print('----------------------')
                 print('共计 ' + str(len(passed_words)) + ' 个单词')
                 break
 elif choice == '2' :
@@ -179,27 +189,31 @@ elif choice == '2' :
     que = all_wards[unit][1]
     ans = all_wards[unit][0]
     passed_words = []
-    judge = True
+    judge = 0
+    times = -1
     while True:
         length = int(len(que))
-        
+        index_list = [i for i in range(len(que))]
+        times += 1
         if length > 0 :
-            index_list = [i for i in range(length)]
-            if judge == True:
+            if times > 0:
+                if judge % 2 == 0:
+                    random.shuffle(index_list)
+                    index = index_list[0]
+            else:
                 random.shuffle(index_list)
                 index = index_list[0]
-            else:
-                index = index_list[0]
-            print('----------------')
+            judge = 2
+            print('----------------------')
             print('当前词库单词剩余数：' + str(len(que)))
-            print('----------------')
+            print('----------------------')
             print('请翻译：' + que[index])
             answer = input('Please translate:')
             if answer == ans[index]:
                 print('Great!' + '∠ (ᐛ 」∠ )')
                 que.pop(index)
                 ans.pop(index)
-                judge = True
+                judge += 2
                 continue
             elif answer == 'pass':
                 print('·answer : '+ ans[index]+ ' ∠ (ᐛ 」∠ )')
@@ -212,30 +226,31 @@ elif choice == '2' :
                 if int(len(passed_words)) == 0:
                     break
                 else:
-                    print('此次 pass 单词如下：')
-                    print('----------------')
+                    print('(¦3[▓▓]')
+                    print('已自动结束运行，此次 pass 单词如下：')
                     for word in passed_words:
                         print(word)
-                    print('----------------')
+                    print('----------------------')
                     print('共计 ' + str(len(passed_words)) + ' 个单词')
                     break
             else:
                 print('Error!')
-                print('·现在你可以继续回答，也可以输入 pass 跳过此单词')
-                judge = False
+                print('现在你可以继续回答，也可以输入 pass 查看答案后回答下一个')
+                judge += 1
                 continue
         else:
-            print('----------------')
+            print('----------------------')
             print('当前词库单词剩余数：' + str(len(que)))
-            print('----------------')
+            print('----------------------')
             if int(len(passed_words)) == 0:
+                print('已自动结束运行')
                 break
             else:
-                print('此次 pass 单词如下：')
-                print('----------------')
+                print('(¦3[▓▓]')
+                print('已自动结束运行，此次 pass 单词如下：')
                 for word in passed_words:
                     print(word)
-                print('----------------')
+                print('----------------------')
                 print('共计 ' + str(len(passed_words)) + ' 个单词')
                 break
 elif choice == '6':
