@@ -142,7 +142,6 @@ if choice == '1' :
                 passed_words.append(word)
                 que.pop(index)
                 ans.pop(index)
-                judge = True
                 continue
             elif answer == 'q':
                 if int(len(passed_words)) == 0:
@@ -208,7 +207,6 @@ elif choice == '2' :
                 passed_words.append(word)
                 que.pop(index)
                 ans.pop(index)
-                judge = True
                 continue
             elif answer == 'q':
                 if int(len(passed_words)) == 0:
