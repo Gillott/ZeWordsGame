@@ -60,11 +60,9 @@ unit15 = [
     ['箭','氧气','打勾','公牛','拼写','由后向前地','改正','简化','罐子','稳定的','坦率地','解雇','空白的','被充满','怀疑','块','喉咙','现状','最高级别的','谚语','邮费','航空邮政','使用者','指导','除···之外','埋葬','字母表','辨别','练习','格言','保守的','任务','非传统的','惩罚','名誉','少量的','不严谨的','品行不端','遵守','温和的','接收者','速度','杰出的','反映','挑选','在某种程度上','误解','角','三角形','原子','倒','火药','火焰','使爆炸','缺乏','吐口水','拉','酸','洋葱','我们的','权利','值得努力的','间谍','胶水','同伴','同学','获得','习惯于','思考','职衔','官僚的','值得的','宗教','保卫','倾向于','忽视','不情愿的','假设','赞成','强烈要求','启发','影子','传统的','王国','文明','极其重要的','有益的','景象','假设','使适应','总的来说','设备','欣赏','生物化学','合唱团'],
     ['arrow','oxygen','tick','ox','spelling','backwards','correction','simplify','jar','secure','frankly','lay off','blank','swell','suspect','lump','throat','status','chief','saying','postage','airmail','user','instruct','aside from','bury','alphabet','distinguish','drill','motto','conservative','assignment','alternative','punishment','reputation','slight','loose','loose conduct','obey','mild','receiver','pace','outstanding','reflect','select','to a certain extent','misunderstand','angle','triangle','atom','pour','powder','flame','set off','lack','spit','drag','acid','onion','ours','access','worthwhile','spy','glue','fellow','fellow students','acquire','be accustomed to','thinking','rank','bureaucratic','worthy','religion','defence','tend to','ignore','unwilling','assumption','approve','urge','inspire','shadow','conventional','kingdom','civilisation','vital','beneficial','image','assume','adapt','as a whole','facility','appreciation','biochemistry','choir']
 ]
-print(len(unit15[0]))
-print(len(unit15[1]))
 unit16 = [
-    [],
-    []
+    ['传记','想象物','恐惧','放弃','出现','撞倒某人','受害者','从前','公主','评判的标准','长篇小说家','火山爆发','保护','太空舱','目击','发生','颤抖','堵住','特别地','遗失','令人敬畏的','从某种程度上说','倒回','建筑','真正的','典型的','纪念碑','聚集','侧身','难过','同情','爆炸','使解散','在去···的路上','增加工资','详细的','重要性','反常的','生动的','困苦','支柱','小提琴家','以···的名字命名','偶然遇见','支撑起','依靠','起源','理解','石南属植物','使泄气','以···结束','忍受','痛苦','音乐剧','乐器','令人钦佩的','嘲笑','可视电话','尤其','出色的','严重的','限制','不能忍受的','倔强的','以前的','引起麻烦的','坦率的','准确的','模仿','宝贵的','由于','渴望的','逐渐的','扩大','复杂的','显而易见的','紫罗兰','甜蜜','温暖','突破','不确定的','令人厌烦的','笨拙的','洒出','令人不愉快的','紧张的','头晕目眩的','鼓掌','不得体的','竖琴','小精灵'],
+    ['biography','fantasy','horror','abandon','come into view','knock sb over','victim','once upon a time','princess','criteria','novelist','volcanic eruption','preserve','capsule','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',]
 ]
 unit17 = [
     [],
@@ -259,7 +257,7 @@ elif choice == '6':
     chinese = all_wards[unit][0]
     english = all_wards[unit][1]
     unit_words = []
-    print('第' + str(unit) + '单元单词如下：')
+    print('第' + str(unit+1) + '单元单词如下：')
     print('----------------')
     for i,j in zip(chinese,english):
         unit_words.append([i,j])
